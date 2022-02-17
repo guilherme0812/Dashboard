@@ -1,0 +1,22 @@
+var options = {
+chart: {
+    type: 'line'
+},
+series: [
+    {
+    name: 'Dezembro/2021',
+    data: [30,40,35,50,49,60,70,91,125]
+    },
+    {
+    name: 'Janeiro/2022',
+    data: [35,46,35,57,29,66,60,81,155]
+    },
+],
+xaxis: {
+    categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+}
+}
+
+var chart = new ApexCharts(document.querySelector("#grafico"), options);
+
+chart.render();

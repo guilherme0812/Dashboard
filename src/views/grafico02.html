@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        * {font-size: 1rem;}
+        .container {display: flex; justify-content: center;}
+        #grafico {min-width: 800px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="grafico"></div>
+    </div>
+
+    <script>
+        // Exemplo com async/await
+        let myjson = {};
+
+        (async () => {
+            myjson = await fetch('../../controllers/controllerEvent.php')
+                .then(response => {
+                return response.json();
+                })
+                .then(r => {
+                    return r;
+                })
+                .catch(err => {
+                    // Do something for an error here
+                });
+            
+                console.log(myjson)
+
+            var options = {
+                chart: {
+                    type: 'bar'
+                },
+                series: [{
+                    name: 'Quantidade de eventos criados:',
+                    data: myjson.datas
+                }],
+                xaxis: {
+                    categories: myjson.names
+                },
+                yaxis: {
+                    min: 0,
+                    max: 30
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal:false,
+                        dataLabels: {position: 'top'}
+                        }
+                },
+                grid: {
+                    show : true,
+                    xaxis: {
+                        lines: {
+                            show:true
+                        }
+                    }
+                    
+                },
+                title: {
+                    text: 'Quantidade de eventos por pessoa',
+                    align: 'center'
+                },
+                colors: ['#6098E0', '#E06092']
+            }
+    
+            var chart = new ApexCharts(document.querySelector("#grafico"), options);
+    
+            chart.render();
+        })();
+
+        
+    </script>
+</body>
+</html>

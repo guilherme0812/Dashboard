@@ -1,0 +1,159 @@
+.dashboard-content {flex-wrap: wrap;}
+.dashboard-title {font-size: 1.8rem; line-height: 0.95; margin: 2rem 0 3rem 0rem;}
+.icon-navbar {
+    width: 1.5px;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 10px 0px 15px -9px rgba(148, 148, 148,0.25); 
+    box-shadow: 10px 0px 15px -9px rgba(148, 148, 148,0.25); 
+}
+nav a {display: inline-block; transition: 0.2s;}
+nav a:hover {opacity: 0.7;}
+.links-container {
+    flex-direction: column;
+    gap: 5rem 0;
+    
+}
+
+/*section-charts*/
+.section-charts {
+    width: 77.01%;
+    padding-top: 0.5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+input#search-chart {
+    padding: 10px 10px 10px 60px;
+    width: 100%;
+    border: none;
+    background-color: var(--background-light-l3);
+    background-image: url('../images/icons/magnifying-glass-solid.svg');
+    background-position: 0% 70%;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    font-size: 1.2rem;
+}
+
+.card {
+    
+    overflow: hidden;
+    padding: 1.7rem 1.7rem 1.7rem 3rem;
+    background-color: var(--background-light-l1);
+    background-image: url('../images/img/elipse.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    -webkit-box-shadow: 0px 18px 15px -9px rgba(148, 148, 148,0.25);  
+    box-shadow: 0px 18px 15px -9px rgba(148, 148, 148,0.25);
+    border-radius: 5px;
+}
+.card header {margin-bottom: 20px;}
+.card header h3 {
+    line-height: 0.9;
+}
+.card p {
+    margin-top: 5px;
+}
+.card img {
+    width: 100%;
+}
+.card a {
+    margin-top: 2rem;
+    padding-left: 1.7rem;
+    display: inline-block;
+    background-image: url('../images/icons/angles-right-solid.svg');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    transition: 0.2s;
+}
+.card a:hover {
+    transform: translateX(10px);
+}
+
+/*Sessão sidebar*/
+section.sidebar {
+    background-color: var(--background-light-l1);
+    padding-top: 80px;
+    padding-left: 1%;
+    padding-right: 1%;
+    -webkit-box-shadow: -10px 0px 15px -9px rgba(148, 148, 148,0.25);  
+    box-shadow: -10px 0px 15px -9px rgba(148, 148, 148,0.25);
+}
+section.sidebar header {text-align: center; margin-bottom: 50px;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .section-charts, .sidebar, .blanc {
+        width: 100%;
+    }
+    nav {
+        width: 80%;
+        transform: scale(0);
+    }
+    .card {margin: 3rem 4rem;}
+}
+
+@media only screen and (min-width: 768px) {
+    /* For Tablets and notebooks */
+    .dashboard-title {font-size: 3rem}
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 6.33%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .blanc {
+        width: 6.33%;
+    }
+    
+    .sidebar {
+        width: 16.66%;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 5rem 0;
+        
+    }
+    .icon-navbar {
+        width: 1.5rem
+    }
+
+    /*section-charts*/
+    .card {
+        margin: 2.5rem 1rem;
+        padding: 1.4rem 1.4rem 1.4rem 2rem;
+        background-repeat: no-repeat;
+        background-size: 13px;
+        transition: 0.2s;
+    }
+    .card a {
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    /* For desktop: */
+    .dashboard-title {font-size: 4rem}
+    
+    .card {
+        margin: 0 4rem 1.8rem 4rem;
+    }
+    
+    /*Sidebar*/
+    .sidebar {
+        width: 16.66%;
+    }
+}
+

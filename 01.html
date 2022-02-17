@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        .container {display: flex; justify-content: center;}
+        #grafico {min-width: 800px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="grafico"></div>
+    </div>
+
+    <script>
+        var options = {
+            chart: {
+                type: 'bar'
+            },
+            series: [{
+                name: 'Homens',
+                data: [12,35,76,45,23,45,28]
+            },
+            {
+                name: 'Mulheres',
+                data: [10,30,76,55,23,35,25]
+            }],
+            xaxis: {
+                categories: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo']
+            },
+            yaxis: {
+                min: 0,
+                max: 100
+            },
+            plotOptions: {
+                bar: {
+                    horizontal:false,
+                    dataLabels: {position: 'top'}
+                    }
+            },
+            grid: {
+                show : true,
+                xaxis: {
+                    lines: {
+                        show:true
+                    }
+                }
+                
+            },
+            colors: ['#6098E0', '#E06092']
+        }
+
+        var chart = new ApexCharts(document.querySelector("#grafico"), options);
+
+        chart.render();
+    </script>
+</body>
+</html>
